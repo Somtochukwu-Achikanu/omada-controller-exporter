@@ -1,0 +1,23 @@
+services:
+  omada-exporter: 
+    build: .
+    container_name: omada-exporter
+    restart: unless-stopped
+    ports:
+      - "6779:6779"
+    volumes:
+      - ./config.yaml:/root/config.yaml
+    environment:
+      - OMADA_PATH=${OMADA_PATH}  # Using environment variable from .env
+      - OMADA_USER=${OMADA_USER}  # Using environment variable from .env
+      - OMADA_PASS=${OMADA_PASS}
+    command: ["/root/omada-controller-exporter", "--config=/root/config.yaml"]
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"

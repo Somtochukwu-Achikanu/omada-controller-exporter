@@ -1,4 +1,6 @@
-path: https://192.168.255.123:8043/
-user: admin
-pass: foo
-secure: false
+omada:
+  path: https://51.21.119.184:8043/                  
+  user: hello.fronet@gmail.com    
+  pass: !reDiscover0987
+  secure: false
+
