@@ -1,6 +1,6 @@
 omada:
-  path: https://51.21.119.184:8043/                  
-  user: hello.fronet@gmail.com    
-  pass: !reDiscover0987
-  secure: false
+  path:https://51.21.119.184:8043/                  
+  user:fronet    
+  pass:#reDiscover1234
+  secure:false
 
